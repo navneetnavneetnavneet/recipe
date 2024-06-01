@@ -1,6 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { recipecontext } from "../contexts/RecipeContext";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Create = () => {
+  const [recipes, setRecipes] = useContext(recipecontext);
+  const navigate = useNavigate();
+
   const [image, setImage] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -19,12 +25,17 @@ const Create = () => {
       instructions,
     };
 
-    console.log(newRecipe);
+    setRecipes([...recipes, newRecipe]);
+    toast.success("Recipe Create Successfully")
+
+    // navigate("/recipes");
   };
+
+  console.log(recipes);
 
   return (
     <form onSubmit={SubmitHandler} className="w-[60%] mx-auto py-10">
-      <h1 className="text-7xl font-extrabold text-green-600 mb-10">
+      <h1 className="text-7xl font-extrabold text-orange-600 mb-10">
         Create New <br /> Recipe
       </h1>
       <input

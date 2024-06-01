@@ -9,8 +9,8 @@ const Footer = () => {
         <div className='w-[60%] border border-zinc-600'></div>
         <div className='flex gap-x-10 my-10'>
             <Link to="/about" className='text-md text-zinc-400'>About Us</Link>
-            <Link to="/about" className='text-md text-zinc-400'>Recipes</Link>
-            <Link to="/about" className='text-md text-zinc-400'>Contact</Link>
+            <Link to="/recipes" className='text-md text-zinc-400'>Recipes</Link>
+            <Link to="/contact" className='text-md text-zinc-400'>Contact</Link>
         </div>
     </div>
   )
