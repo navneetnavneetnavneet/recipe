@@ -14,8 +14,8 @@ const MainRoute = () => {
         <Route path="/" element={<Layout />} />
         <Route path="/create-recipe" element={<Create />} />
         <Route path="/recipes" element={<Recipes />} />
-        <Route path="/recipes/1" element={<Details />} />
-        <Route path="/update-recipe/1" element={<Update />} />
+        <Route path="/recipes/:id" element={<Details />} />
+        <Route path="/update-recipe/:id" element={<Update />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>

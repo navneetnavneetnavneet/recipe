@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { recipecontext } from "../contexts/RecipeContext";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { nanoid } from "nanoid";
 
 const Create = () => {
   const [recipes, setRecipes] = useContext(recipecontext);
@@ -17,7 +18,7 @@ const Create = () => {
     event.preventDefault();
 
     const newRecipe = {
-      id: Date.now(),
+      id: nanoid(),
       image,
       title,
       description,
@@ -28,7 +29,7 @@ const Create = () => {
     setRecipes([...recipes, newRecipe]);
     toast.success("Recipe Create Successfully")
 
-    // navigate("/recipes");
+    navigate("/recipes");
   };
 
   console.log(recipes);
