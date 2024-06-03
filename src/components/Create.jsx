@@ -27,7 +27,8 @@ const Create = () => {
     };
 
     setRecipes([...recipes, newRecipe]);
-    toast.success("Recipe Create Successfully")
+    localStorage.setItem("cooks", JSON.stringify([...recipes, newRecipe]));
+    toast.success("Recipe Create Successfully");
 
     navigate("/recipes");
   };

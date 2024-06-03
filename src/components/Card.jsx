@@ -8,7 +8,7 @@ const Card = (prop) => {
   return (
     <Link
       to={`/recipes/${id}`}
-      className="recipe w-[30%] hover:text-white/90 hover:bg-orange-400 shadow rounded-lg mt-[5%] p-5"
+      className="recipe w-[30%] hover:text-white/90 hover:bg-orange-400 duration-300 shadow rounded-lg mt-[5%] p-5"
     >
       <div className="w-full h-[40vh] rounded-lg overflow-hidden">
         <img className="w-full h-full object-contain" src={image} alt="" />
